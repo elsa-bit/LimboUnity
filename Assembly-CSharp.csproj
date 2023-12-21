@@ -56,7 +56,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Src\PlayerAction.cs" />
+    <Compile Include="Assets\JumpController.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\AttackController.cs" />
     <Compile Include="Assets\Src\JoystickController.cs" />
   </ItemGroup>
   <ItemGroup>

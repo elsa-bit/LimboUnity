@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JoystickController : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject player, padController;
     private bool _isDragging = false;
     private Vector2 _intialPosition;
     private float speed = 5;
@@ -21,7 +21,7 @@ public class JoystickController : MonoBehaviour
         if(Input.touchCount > 0) {
             var touch = Input.GetTouch(0);
             var touchPos = Camera.main.ScreenToWorldPoint(touch.position);
-            if(touch.phase == TouchPhase.Began)
+            if(touch.phase == TouchPhase.Began && _isFocus(touchPos))
             {
                 _startMove(touchPos);
             }
@@ -70,5 +70,19 @@ public class JoystickController : MonoBehaviour
     {
         _isDragging = false;
         transform.position = _intialPosition;
+    }
+
+    private bool _isFocus(Vector2 touchPos)
+    {
+        var size = padController.GetComponent<Renderer>().bounds.size;
+        var radius = size.x / 2;
+        if (touchPos.x < _intialPosition.x + radius &&
+            touchPos.x > _intialPosition.x - radius &&
+            touchPos.y < _intialPosition.y + radius &&
+            touchPos.y > _intialPosition.y - radius)
+        {
+            return true;
+        }
+        return false;
     }
 }
