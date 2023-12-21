@@ -9,13 +9,11 @@ public class JoystickController : MonoBehaviour
     private Vector2 _intialPosition;
     private float speed = 5;
     
-    // Start is called before the first frame update
     void Start()
     {
         _intialPosition = transform.position;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if(Input.touchCount > 0) {
