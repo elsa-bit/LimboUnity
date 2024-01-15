@@ -54,11 +54,11 @@ public class JoystickController : MonoBehaviour
     private void _moving(Vector2 touchPos)
     {
         var rigidbody = player.GetComponent<Rigidbody2D>();
-        if (_intialPosition.x < touchPos.x)
+        if (padController.transform.position.x < touchPos.x)
         {
             rigidbody.velocity = new Vector2(speed, rigidbody.velocity.y);
         }
-        else if(_intialPosition.x > touchPos.x)
+        else if(padController.transform.position.x > touchPos.x)
         {
             rigidbody.velocity = new Vector2(-speed, rigidbody.velocity.y);
         }
@@ -67,17 +67,17 @@ public class JoystickController : MonoBehaviour
     private void _endMove()
     {
         _isDragging = false;
-        transform.position = _intialPosition;
+        transform.position = padController.transform.position;
     }
 
     private bool _isFocus(Vector2 touchPos)
     {
         var size = padController.GetComponent<Renderer>().bounds.size;
         var radius = size.x / 2;
-        if (touchPos.x < _intialPosition.x + radius &&
-            touchPos.x > _intialPosition.x - radius &&
-            touchPos.y < _intialPosition.y + radius &&
-            touchPos.y > _intialPosition.y - radius)
+        if (touchPos.x < padController.transform.position.x + radius &&
+            touchPos.x > padController.transform.position.x - radius &&
+            touchPos.y < padController.transform.position.y + radius &&
+            touchPos.y > padController.transform.position.y - radius)
         {
             return true;
         }
