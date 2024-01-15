@@ -6,12 +6,12 @@ public class JoystickController : MonoBehaviour
 {
     public GameObject player, padController;
     private bool _isDragging = false;
-    private Vector2 _intialPosition;
+    private Vector2 _initialPosition;
     private float speed = 5;
     
     void Start()
     {
-        _intialPosition = transform.position;
+        _initialPosition = transform.position;
     }
     
     void Update()
