@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     public float speed = 10.4f;
 
@@ -11,23 +8,30 @@ public class Player : MonoBehaviour
     {
         Vector3 position = transform.position;
 
-        if(Input.GetKey("z")) {
+        if (Input.GetKey(KeyCode.W))
+        {
             position.y += speed * Time.deltaTime;
+            Debug.Log("W");
         }
 
-        if(Input.GetKey("s")) {
+        if (Input.GetKey(KeyCode.S))
+        {
             position.y -= speed * Time.deltaTime;
+            Debug.Log("S");
         }
 
-        if(Input.GetKey("q")) {
+        if (Input.GetKey(KeyCode.A))
+        {
             position.x -= speed * Time.deltaTime;
+            Debug.Log("A");
         }
 
-        if(Input.GetKey("d")) {
+        if (Input.GetKey(KeyCode.D))
+        {
             position.x += speed * Time.deltaTime;
+            Debug.Log("D");
         }
 
         transform.position = position;
-
     }
 }
