@@ -4,37 +4,20 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float jumpForce = 10f;
+    Rigidbody2D rb;
+    public int force = 100;
 
-    // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Ici");
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        // Déplacement à droite
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            Debug.Log("Droite");
-            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-        }
+        float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime;
+        float y = Input.GetAxis("Vertical") * Time.fixedDeltaTime;
 
-        // Déplacement à gauche
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-            Debug.Log("Gauche");
-        }
-
-        // Saut
-        if (Input.GetKey(KeyCode.Space))
-        {
-            transform.position += Vector3.up * jumpForce * Time.deltaTime;
-            Debug.Log("Saut");
-        }
+        if (x != 0) rb.AddForce(Vector2.right * x * force);
+        if (y != 0) rb.AddForce(Vector2.up * y * force);
     }
 }
