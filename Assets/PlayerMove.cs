@@ -5,12 +5,6 @@ public class PlayerMove : MonoBehaviour
     public float speed = 10.4f;
     public Animator animator;
 
-    void Start()
-    {
-        animator.SetFloat("Horizontal", 0f);
-        animator.SetFloat("Vertical", 0f);
-    }
-
     void Update()
     {
         Vector3 position = transform.position;
