@@ -12,19 +12,23 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             position.y += speed * Time.deltaTime;
+            animator.SetFloat("Horizontal", 0f);
             animator.SetFloat("Vertical", 1f);
-            Debug.Log("W");
+
+            transform.position = position;
+            animator.SetFloat("Speed", position.magnitude);
         }
         else if (Input.GetKey(KeyCode.S))
         {
             position.y -= speed * Time.deltaTime;
-            animator.SetFloat("Vertical", -1f);
-            Debug.Log("S");
+
+            transform.position = position;
         }
         else if (Input.GetKey(KeyCode.A))
         {
             position.x -= speed * Time.deltaTime;
             animator.SetFloat("Horizontal", -1f);
+            animator.SetFloat("Vertical", 0f);
 
             transform.position = position;
             animator.SetFloat("Speed", position.magnitude);
@@ -33,6 +37,7 @@ public class PlayerMove : MonoBehaviour
         {
             position.x += speed * Time.deltaTime;
             animator.SetFloat("Horizontal", 1f);
+            animator.SetFloat("Vertical", 0f);
 
             transform.position = position;
             animator.SetFloat("Speed", position.magnitude);

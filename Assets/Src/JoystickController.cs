@@ -8,30 +8,32 @@ public class JoystickController : MonoBehaviour
     private bool _isDragging = false;
     private Vector2 _initialPosition;
     private float speed = 5;
-    
+    public Animator animator;
+
     void Start()
     {
         _initialPosition = transform.position;
     }
-    
+
     void Update()
     {
-        if(Input.touchCount > 0) {
+        if (Input.touchCount > 0)
+        {
             var touch = Input.GetTouch(0);
             var touchPos = Camera.main.ScreenToWorldPoint(touch.position);
-            if(touch.phase == TouchPhase.Began && _isFocus(touchPos))
+            if (touch.phase == TouchPhase.Began && _isFocus(touchPos))
             {
                 _startMove(touchPos);
             }
-            if(touch.phase == TouchPhase.Moved && _isDragging)
+            if (touch.phase == TouchPhase.Moved && _isDragging)
             {
                 _updateJoystickPosition(touchPos);
             }
-            if(_isDragging)
+            if (_isDragging)
             {
                 _moving(touchPos);
             }
-            if(touch.phase == TouchPhase.Ended)
+            if (touch.phase == TouchPhase.Ended)
             {
                 _endMove();
             }
@@ -41,7 +43,8 @@ public class JoystickController : MonoBehaviour
     private void _startMove(Vector2 touchPos)
     {
         Collider2D touchedCollider = Physics2D.OverlapPoint(touchPos);
-        if(touchedCollider != null) {
+        if (touchedCollider != null)
+        {
             _isDragging = true;
         }
     }
@@ -50,7 +53,7 @@ public class JoystickController : MonoBehaviour
     {
         transform.position = new Vector2(touchPos.x, touchPos.y);
     }
-    
+
     private void _moving(Vector2 touchPos)
     {
         var rigidbody = player.GetComponent<Rigidbody2D>();
@@ -58,12 +61,16 @@ public class JoystickController : MonoBehaviour
         {
             rigidbody.velocity = new Vector2(speed, rigidbody.velocity.y);
         }
-        else if(padController.transform.position.x > touchPos.x)
+        else if (padController.transform.position.x > touchPos.x)
         {
             rigidbody.velocity = new Vector2(-speed, rigidbody.velocity.y);
         }
+        else
+        {
+            rigidbody.velocity = new Vector2(0f, rigidbody.velocity.y);
+        }
     }
-    
+
     private void _endMove()
     {
         _isDragging = false;
