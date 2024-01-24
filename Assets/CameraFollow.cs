@@ -6,22 +6,18 @@ public class CameraFollow : MonoBehaviour
 {
 
     public Transform player;
-    float offset;
-    float inset;
+    private float horizontalOffset;
+    private float verticalOffset;
 
-    // Start is called before the first frame update
     void Start()
     {
-        offset = transform.position.x - player.position.x;
-        //inset = transform.position.y + player.position.y;
+        horizontalOffset = transform.position.x - player.position.x;
+        verticalOffset = transform.position.y + player.position.y;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.position;
-        pos.x = player.position.x + offset;
-        //pos.y = player.position.y + inset/2;
-        transform.position = pos;
+        Vector3 targetPosition = new Vector3(player.position.x + horizontalOffset, player.position.y + verticalOffset, transform.position.z);
+        transform.position = targetPosition;
     }
 }

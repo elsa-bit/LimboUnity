@@ -66,11 +66,13 @@
     <Compile Include="Assets/MoveObject.cs" />
     <Compile Include="Assets/Src/PlayerAction.cs" />
     <Compile Include="Assets/JumpController.cs" />
+    <Compile Include="Assets/Monster.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/Test.cs" />
     <Compile Include="Assets/Ladder.cs" />
     <Compile Include="Assets/CameraFollow.cs" />
     <Compile Include="Assets/AttackController.cs" />
+    <Compile Include="Assets/JumpFlower.cs" />
     <Compile Include="Assets/Src/JoystickController.cs" />
     <Compile Include="Assets/PlayerMove.cs" />
   </ItemGroup>
