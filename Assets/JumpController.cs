@@ -15,23 +15,35 @@ public class JumpController : MonoBehaviour
 
     void Update()
     {
+        _adapterForTest();
         if (Input.touchCount > 0)
         {
             var touch = Input.GetTouch(0);
             var touchPos = Camera.main.ScreenToWorldPoint(touch.position);
             if (touch.phase == TouchPhase.Began && _isFocus(touchPos))
             {
-                var rigidbody = player.GetComponent<Rigidbody2D>();
-                rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpForce);
-
-                animator.SetFloat("Horizontal", 0f);
-                animator.SetFloat("Vertical", 1f);
-                animator.SetFloat("Speed", transform.position.magnitude);
-                Debug.Log(transform.position.magnitude);
+                _jumping();
             }
         }
     }
 
+    private void _adapterForTest()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            _jumping();
+        }
+    }
+
+    private void _jumping()
+    {
+        var rigidbody = player.GetComponent<Rigidbody2D>();
+        rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpForce);
+        animator.SetFloat("Horizontal", 0f);
+        animator.SetFloat("Vertical", 1f);
+        animator.SetFloat("Speed", transform.position.magnitude);
+    }
+    
     private void FixedUpdate()
     {
         var rigidbody = player.GetComponent<Rigidbody2D>();

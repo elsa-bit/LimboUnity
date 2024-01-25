@@ -38,6 +38,7 @@ public class JoystickController : MonoBehaviour
                 _endMove();
             }
         }
+
     }
 
     private void _startMove(Vector2 touchPos)
@@ -56,18 +57,27 @@ public class JoystickController : MonoBehaviour
 
     private void _moving(Vector2 touchPos)
     {
-        var rigidbody = player.GetComponent<Rigidbody2D>();
-        if (padController.transform.position.x < touchPos.x)
+        var move = player.GetComponent<PlayerMove>();
+        var size = padController.GetComponent<Renderer>().bounds.size;
+        var radius = size.x / 2;
+        var deltaX = padController.transform.position.x - touchPos.x;
+        var deltaY = padController.transform.position.y - touchPos.y;
+        
+        if (deltaY < 0)
         {
-            rigidbody.velocity = new Vector2(speed, rigidbody.velocity.y);
+            move.ToUp();
         }
-        else if (padController.transform.position.x > touchPos.x)
+        else if (deltaX < 0)
         {
-            rigidbody.velocity = new Vector2(-speed, rigidbody.velocity.y);
+            move.ToRight();
+        }
+        else if (deltaX > 0)
+        {
+            move.ToLeft();
         }
         else
         {
-            rigidbody.velocity = new Vector2(0f, rigidbody.velocity.y);
+            move.Stop();
         }
     }
 
