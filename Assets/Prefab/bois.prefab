@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8567555931815976483}
   - component: {fileID: 8046386640995959610}
   - component: {fileID: 8085901430700417825}
-  - component: {fileID: 1925763489181148494}
+  - component: {fileID: 7094193928350545314}
   m_Layer: 0
   m_Name: bois
   m_TagString: Untagged
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 10
---- !u!61 &1925763489181148494
-BoxCollider2D:
+--- !u!60 &7094193928350545314
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -169,6 +169,14 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3, y: 3}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.04, y: 1.5}
+      - {x: -0.02, y: 1.5}
+      - {x: -1.36, y: 0.83}
+      - {x: -1.36, y: -0.85999995}
+      - {x: -0.02, y: -1.5}
+      - {x: 0.07, y: -1.5}
+      - {x: 1.36, y: -0.83}
+      - {x: 1.36, y: 0.83}
+  m_UseDelaunayMesh: 0

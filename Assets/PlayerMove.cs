@@ -4,6 +4,13 @@ public class PlayerMove : MonoBehaviour
 {
     public float speed = 9.0f;
     public Animator animator;
+    public Vector3 _initialPosition;
+    public GameManagement gameManagement;
+
+    void Start()
+    {
+        _initialPosition = transform.position;
+    }
 
     void Update()
     {
@@ -59,7 +66,7 @@ public class PlayerMove : MonoBehaviour
         transform.position = position;
         animator.SetFloat("Speed", position.magnitude);
     }
-    
+
     public void Stop()
     {
         animator.SetFloat("Horizontal", 0f);
