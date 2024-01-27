@@ -7,9 +7,11 @@ public class GameManagement : MonoBehaviour
     public int maxLife = 3;
     public float lifePoint = 3f;
     public GameObject[] HeartContainer;
+    public GameObject gameOver;
 
     void Start()
     {
+        gameOver.SetActive(false);
         UpdateHeartContainer();
         UpdateLife();
     }
@@ -54,5 +56,12 @@ public class GameManagement : MonoBehaviour
     {
         lifePoint -= damage;
         UpdateLife();
+        if(lifePoint == 0f){
+            GameOver();
+        }
+    }
+
+    public void GameOver(){
+        gameOver.SetActive(true);
     }
 }
