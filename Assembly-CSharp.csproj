@@ -72,6 +72,7 @@
     <Compile Include="Assets/CameraFollow.cs" />
     <Compile Include="Assets/PlantTrap.cs" />
     <Compile Include="Assets/GameManagement.cs" />
+    <Compile Include="Assets/LevelSelectButton.cs" />
     <Compile Include="Assets/AttackController.cs" />
     <Compile Include="Assets/JumpFlower.cs" />
     <Compile Include="Assets/HeartContainer.cs" />

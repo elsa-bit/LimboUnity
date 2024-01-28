@@ -57,20 +57,24 @@ public class GameManagement : MonoBehaviour
     {
         lifePoint -= damage;
         UpdateLife();
-        if(lifePoint == 0f){
+        if (lifePoint == 0f)
+        {
             GameOver();
         }
     }
 
-    public void GameOver(){
+    public void GameOver()
+    {
         gameOver.SetActive(true);
     }
 
-    public void restart() {
+    public void restart()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void mainMenu() {
+    public void mainMenu()
+    {
         SceneManager.LoadScene("MainMenu");
     }
 }
