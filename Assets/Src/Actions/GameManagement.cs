@@ -9,12 +9,16 @@ public class GameManagement : MonoBehaviour
     public float lifePoint = 3f;
     public GameObject[] HeartContainer;
     public GameObject gameOver;
+    public GameObject player;
+    private float _initialLifePoint;
 
     void Start()
     {
         gameOver.SetActive(false);
         UpdateHeartContainer();
         UpdateLife();
+
+        _initialLifePoint = lifePoint;
     }
 
     public void UpdateHeartContainer()
@@ -66,6 +70,8 @@ public class GameManagement : MonoBehaviour
     public void GameOver()
     {
         gameOver.SetActive(true);
+        player.SetActive(false);
+        lifePoint = _initialLifePoint;
     }
 
     public void restart()
