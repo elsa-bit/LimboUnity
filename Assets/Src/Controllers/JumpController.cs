@@ -5,12 +5,12 @@ using UnityEngine;
 public class JumpController : MonoBehaviour
 {
     public GameObject player;
-    private float jumpForce = 10;
-    public Animator animator;
+    private PlayerMove _playerMove;
+    private bool _isJumping = false;
 
     void Start()
     {
-
+        _playerMove = player.GetComponent<PlayerMove>();
     }
 
     void Update()
@@ -23,6 +23,14 @@ public class JumpController : MonoBehaviour
             if (touch.phase == TouchPhase.Began && _isFocus(touchPos))
             {
                 _jumping();
+            }
+            if (_isJumping)
+            {
+                _jumping();
+            }
+            if (touch.phase == TouchPhase.Ended)
+            {
+                _endJump();
             }
         }
     }
@@ -37,17 +45,14 @@ public class JumpController : MonoBehaviour
 
     private void _jumping()
     {
-        var rigidbody = player.GetComponent<Rigidbody2D>();
-        rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpForce);
-        animator.SetFloat("Horizontal", 0f);
-        animator.SetFloat("Vertical", 1f);
-        animator.SetFloat("Speed", transform.position.magnitude);
+        _isJumping = true;
+        _playerMove.ToUp();
     }
-    
-    private void FixedUpdate()
+
+    private void _endJump()
     {
-        var rigidbody = player.GetComponent<Rigidbody2D>();
-        rigidbody.gravityScale = 4f;
+        _isJumping = false;
+        _playerMove.Stop();
     }
 
     private bool _isFocus(Vector2 touchPos)

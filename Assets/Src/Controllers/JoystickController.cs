@@ -7,15 +7,19 @@ public class JoystickController : MonoBehaviour
     public GameObject player, padController;
     private bool _isDragging = false;
     private Vector2 _initialPosition;
-
+    private PlayerMove _playerMove;
+    private Vector3 _padSize;
     
     void Start()
     {
         _initialPosition = transform.position;
+        _playerMove = player.GetComponent<PlayerMove>();
+        _padSize = padController.GetComponent<Renderer>().bounds.size;
     }
 
     void Update()
     {
+        _adapterForTest();
         if (Input.touchCount > 0)
         {
             var touch = Input.GetTouch(0);
@@ -32,23 +36,34 @@ public class JoystickController : MonoBehaviour
             {
                 _moving(touchPos);
             }
-            if (touch.phase == TouchPhase.Ended)
+            if (touch.phase == TouchPhase.Ended && _isDragging)
             {
                 _endMove();
             }
         }
 
     }
+    
+    private void _adapterForTest()
+    {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            _playerMove.ToLeft();
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            _playerMove.ToRight();
+        }
+        else if (Input.GetKey(KeyCode.Z))
+        {
+            _playerMove.ToUp();
+        }
+    }
 
     private void _startMove(Vector2 touchPos)
     {
         Collider2D touchedCollider = Physics2D.OverlapPoint(touchPos);
         _isDragging = true;
-       /* if (touchedCollider != null)
-        {
-            Debug.Log("Test");
-            _isDragging = true;
-        }*/
     }
 
     private void _updateJoystickPosition(Vector2 touchPos)
@@ -58,27 +73,21 @@ public class JoystickController : MonoBehaviour
 
     private void _moving(Vector2 touchPos)
     {
-        var move = player.GetComponent<PlayerMove>();
-        var size = padController.GetComponent<Renderer>().bounds.size;
-        var radius = size.x / 2;
+        var radius = _padSize.x / 2;
         var deltaX = padController.transform.position.x - touchPos.x;
         var deltaY = padController.transform.position.y - touchPos.y;
         
         if (deltaY < 0)
         {
-            move.ToUp();
+            _playerMove.ToUp();
         }
         else if (deltaX < 0)
         {
-            move.ToRight();
+            _playerMove.ToRight();
         }
         else if (deltaX > 0)
         {
-            move.ToLeft();
-        }
-        else
-        {
-            move.Stop();
+            _playerMove.ToLeft();
         }
     }
 
@@ -86,12 +95,12 @@ public class JoystickController : MonoBehaviour
     {
         _isDragging = false;
         transform.position = padController.transform.position;
+        _playerMove.Stop();
     }
 
     private bool _isFocus(Vector2 touchPos)
     {
-        var size = padController.GetComponent<Renderer>().bounds.size;
-        var radius = size.x / 2;
+        var radius = _padSize.x / 2;
         if (touchPos.x < padController.transform.position.x + radius &&
             touchPos.x > padController.transform.position.x - radius &&
             touchPos.y < padController.transform.position.y + radius &&

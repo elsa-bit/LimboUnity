@@ -55,21 +55,20 @@
     <UnityVersion>2022.3.11f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\MoveObject.cs" />
-    <Compile Include="Assets\Src\PlayerAction.cs" />
-    <Compile Include="Assets\JumpController.cs" />
-    <Compile Include="Assets\Monster.cs" />
+    <Compile Include="Assets\Src\Environment\Ladder.cs" />
+    <Compile Include="Assets\Src\Controllers\JoystickController.cs" />
+    <Compile Include="Assets\Src\Environment\Monster.cs" />
+    <Compile Include="Assets\Src\Environment\PlantTrap.cs" />
+    <Compile Include="Assets\Src\Actions\CameraFollow.cs" />
     <Compile Include="Assets\Test.cs" />
-    <Compile Include="Assets\Ladder.cs" />
-    <Compile Include="Assets\CameraFollow.cs" />
-    <Compile Include="Assets\PlantTrap.cs" />
-    <Compile Include="Assets\GameManagement.cs" />
-    <Compile Include="Assets\LevelSelectButton.cs" />
-    <Compile Include="Assets\AttackController.cs" />
-    <Compile Include="Assets\JumpFlower.cs" />
-    <Compile Include="Assets\HeartContainer.cs" />
-    <Compile Include="Assets\Src\JoystickController.cs" />
-    <Compile Include="Assets\PlayerMove.cs" />
+    <Compile Include="Assets\Src\Controllers\AttackController.cs" />
+    <Compile Include="Assets\Src\Controllers\JumpController.cs" />
+    <Compile Include="Assets\Src\Actions\HeartContainer.cs" />
+    <Compile Include="Assets\Src\Environment\JumpFlower.cs" />
+    <Compile Include="Assets\Src\Actions\PlayerMove.cs" />
+    <Compile Include="Assets\Src\Environment\MoveObject.cs" />
+    <Compile Include="Assets\Src\Actions\GameManagement.cs" />
+    <Compile Include="Assets\Src\Environment\LevelSelectButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
