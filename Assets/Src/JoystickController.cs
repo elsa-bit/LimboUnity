@@ -7,13 +7,11 @@ public class JoystickController : MonoBehaviour
     public GameObject player, padController;
     private bool _isDragging = false;
     private Vector2 _initialPosition;
-    public int life;
-    public Animator animator;
 
+    
     void Start()
     {
         _initialPosition = transform.position;
-        life = 3;
     }
 
     void Update()
@@ -45,10 +43,12 @@ public class JoystickController : MonoBehaviour
     private void _startMove(Vector2 touchPos)
     {
         Collider2D touchedCollider = Physics2D.OverlapPoint(touchPos);
-        if (touchedCollider != null)
+        _isDragging = true;
+       /* if (touchedCollider != null)
         {
+            Debug.Log("Test");
             _isDragging = true;
-        }
+        }*/
     }
 
     private void _updateJoystickPosition(Vector2 touchPos)

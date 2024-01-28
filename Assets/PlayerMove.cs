@@ -4,8 +4,8 @@ public class PlayerMove : MonoBehaviour
 {
     public float speed = 9.0f;
     public Animator animator;
-    public Vector3 _initialPosition;
     public GameManagement gameManagement;
+    private Vector3 _initialPosition;
 
     void Start()
     {
@@ -14,27 +14,6 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            ToUp();
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            /*position.y -= speed * Time.deltaTime;
-            transform.position = position;*/
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            ToLeft();
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            ToRight();
-        }
-        else
-        {
-            Stop();
-        }
     }
 
     public void ToLeft()
@@ -59,7 +38,7 @@ public class PlayerMove : MonoBehaviour
 
     public void ToUp()
     {
-        Vector3 position = transform.position;
+       Vector3 position = transform.position;
         position.y += speed * Time.deltaTime;
         animator.SetFloat("Horizontal", 0f);
         animator.SetFloat("Vertical", 1f);

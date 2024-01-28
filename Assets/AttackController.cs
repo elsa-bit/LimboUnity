@@ -14,13 +14,13 @@ public class AttackController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 position = transform.position;
+        /*Vector3 position = transform.position;
 
         if (Input.touchCount > 0)
         {
             animator.SetFloat("Horizontal", 2f);
             animator.SetFloat("Vertical", 0f);
             animator.SetFloat("Speed", position.magnitude);
-        }
+        }*/
     }
 }
