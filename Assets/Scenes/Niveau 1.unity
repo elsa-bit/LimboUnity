@@ -5343,6 +5343,7 @@ MonoBehaviour:
   - {fileID: 791254642}
   - {fileID: 376688060}
   gameOver: {fileID: 737247558}
+  player: {fileID: 816069614}
 --- !u!4 &1103614620
 Transform:
   m_ObjectHideFlags: 0
