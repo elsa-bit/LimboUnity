@@ -4,18 +4,23 @@ public class CameraFollow : MonoBehaviour
 {
 
     public Transform player;
-    private float horizontalOffset;
-    private float verticalOffset;
+    private Vector3 _offset;
+    public float topMargin = 0.05f;
+    public float bottomMargin = 0.05f;
 
     void Start()
     {
-        horizontalOffset = transform.position.x - player.position.x;
-        verticalOffset = transform.position.y + player.position.y;
+        _offset = transform.position - player.position;
     }
 
     void Update()
     {
-        Vector3 targetPosition = new Vector3(player.position.x + horizontalOffset, player.position.y + verticalOffset, transform.position.z);
+        var targetPosition = player.position + _offset;
+        var playerViewportPosition = Camera.main.WorldToViewportPoint(player.position);
+        if (playerViewportPosition.y > topMargin || playerViewportPosition.y < bottomMargin)
+        {
+            targetPosition.y = player.position.y + _offset.y;
+        }
         transform.position = targetPosition;
     }
 }
