@@ -72,6 +72,7 @@
     <Compile Include="Assets\Src\Actions\PlayerMove.cs" />
     <Compile Include="Assets\Src\Controllers\GravityController.cs" />
     <Compile Include="Assets\Src\Environment\MoveObject.cs" />
+    <Compile Include="Assets\Src\Effects\CameraEffect.cs" />
     <Compile Include="Assets\Src\Actions\GameManagement.cs" />
     <Compile Include="Assets\Src\Environment\LevelSelectButton.cs" />
   </ItemGroup>
@@ -96,6 +97,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Src\Shaders\CameraShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
