@@ -960,7 +960,7 @@ PrefabInstance:
     - target: {fileID: 1251395433476879231, guid: 8bdb6558d6ee043419562ec2fe4841b4, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1251395433476879231, guid: 8bdb6558d6ee043419562ec2fe4841b4, type: 3}
       propertyPath: m_Name
       value: ReverseGravityDetector-2
@@ -2054,6 +2054,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1214205869}
     - target: {fileID: 1251395433476879231, guid: b905139c02d4bfd4ba1dab18d32c1716, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1251395433476879231, guid: b905139c02d4bfd4ba1dab18d32c1716, type: 3}
       propertyPath: m_Name
       value: ReverseDecorDetector
       objectReference: {fileID: 0}
@@ -2562,7 +2566,7 @@ PrefabInstance:
     - target: {fileID: 1251395433476879231, guid: 8bdb6558d6ee043419562ec2fe4841b4, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1251395433476879231, guid: 8bdb6558d6ee043419562ec2fe4841b4, type: 3}
       propertyPath: m_Name
       value: ReverseGravityDetector

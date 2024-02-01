@@ -14,7 +14,7 @@ public class DecorReverser : MonoBehaviour
         _isReverse = !_isReverse;
         if (!_isRotating)
         {
-            StartCoroutine(RotateOverTime(5));
+            StartCoroutine(RotateOverTime(4));
         }
     }
 
