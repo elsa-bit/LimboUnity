@@ -17,6 +17,7 @@ public class IceCreamProjectile : MonoBehaviour
         if (
             collision.gameObject.CompareTag("Player")
         ) {
+            Debug.Log("Collision with player");
             var playerScript = collision.gameObject.GetComponent<PlayerMove>();
             playerScript.gameManagement.TakeDamage(0.5f);
         }
