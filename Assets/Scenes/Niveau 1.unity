@@ -583,6 +583,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 816069620}
+  topMargin: 0.05
+  bottomMargin: 0.05
 --- !u!1 &132733417
 GameObject:
   m_ObjectHideFlags: 0
@@ -5342,7 +5344,7 @@ MonoBehaviour:
   - {fileID: 406117907}
   - {fileID: 791254642}
   - {fileID: 376688060}
-  gameOver: {fileID: 737247558}
+  gameOver: {fileID: 2090880708}
   player: {fileID: 816069614}
 --- !u!4 &1103614620
 Transform:
