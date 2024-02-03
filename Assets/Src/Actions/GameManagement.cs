@@ -50,8 +50,6 @@ public class GameManagement : MonoBehaviour
             {
                 if ((lifePoint % fullhearts) != 0)
                 {
-                    Debug.Log(lifePoint);
-                    Debug.Log(fullhearts);
                     HeartContainer[fullhearts].GetComponent<HeartContainer>().SetContain(0.5f);
                 }
                 else
