@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DecorReverseController : MonoBehaviour
@@ -16,7 +17,7 @@ public class DecorReverseController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            _decorReverser.ReverseDecor();
+            _decorReverser.ReverseDecor(other.GameObject());
         }
     }
 }
