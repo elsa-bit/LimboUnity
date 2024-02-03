@@ -12,6 +12,14 @@ public class PlantTrap : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            LoseLife(collision.gameObject);
+        }
+    }
+
     private void LoseLife(GameObject player)
     {
         var playerScript = player.GetComponent<PlayerMove>();

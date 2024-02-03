@@ -42,13 +42,22 @@ public class GameManagement : MonoBehaviour
         }
         if (fullhearts < maxLife)
         {
-            if ((lifePoint % fullhearts) != 0)
+            if (lifePoint < 0f && fullhearts < 0)
             {
-                HeartContainer[fullhearts].GetComponent<HeartContainer>().SetContain(0.5f);
+                GameOver();
             }
             else
             {
-                HeartContainer[fullhearts].GetComponent<HeartContainer>().SetContain(0f);
+                if ((lifePoint % fullhearts) != 0)
+                {
+                    Debug.Log(lifePoint);
+                    Debug.Log(fullhearts);
+                    HeartContainer[fullhearts].GetComponent<HeartContainer>().SetContain(0.5f);
+                }
+                else
+                {
+                    HeartContainer[fullhearts].GetComponent<HeartContainer>().SetContain(0f);
+                }
             }
         }
         for (int i = fullhearts + 1; i < maxLife; i++)
