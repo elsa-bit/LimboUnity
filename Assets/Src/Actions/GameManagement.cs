@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManagement : MonoBehaviour
 {
@@ -10,7 +11,11 @@ public class GameManagement : MonoBehaviour
     public GameObject[] HeartContainer;
     public GameObject gameOver;
     public GameObject player;
+    public Button son;
+    public Sprite SonOn;
+    public Sprite SonOff;
     private float _initialLifePoint;
+    private bool muted;
 
     void Start()
     {
@@ -89,5 +94,16 @@ public class GameManagement : MonoBehaviour
     public void mainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Mute() {
+        muted = !muted;
+        if(muted) {
+            AudioListener.volume = 0;
+            son.image.sprite = SonOff;
+        }else{
+            AudioListener.volume = 1;
+            son.image.sprite = SonOn;
+        }
     }
 }
