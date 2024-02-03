@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlantTrap : MonoBehaviour
 {
+    public float damage = 0.5f;
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,6 +15,6 @@ public class PlantTrap : MonoBehaviour
     private void LoseLife(GameObject player)
     {
         var playerScript = player.GetComponent<PlayerMove>();
-        playerScript.gameManagement.TakeDamage(0.5f);
+        playerScript.gameManagement.TakeDamage(damage);
     }
 }
