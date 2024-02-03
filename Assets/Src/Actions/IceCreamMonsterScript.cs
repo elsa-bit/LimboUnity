@@ -10,11 +10,13 @@ public class IceCreamMonsterScript : MonoBehaviour
     public float projectileSpeed = 5f;
     public float xOffset = 1f;
     public float yOffset = 1f;
+    private Animator animator;
     private bool canShoot = true;
     private Detector detector;
 
     private void Awake() {
         detector = GetComponentInChildren<Detector>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Start is called before the first frame update
@@ -27,7 +29,7 @@ public class IceCreamMonsterScript : MonoBehaviour
     void Update()
     {
         if(detector.DetectorIsDetectingTarget() && canShoot) {
-            Shoot();
+            StartCoroutine(Shooting());
         }
        
     }
@@ -50,6 +52,14 @@ public class IceCreamMonsterScript : MonoBehaviour
         //Debug.Log(transform.localScale.x);
         cream.GetComponent<Rigidbody2D>().velocity = distance; //* projectileSpeed;//new Vector2(-1*xOffset, 1*yOffset) * projectileSpeed;
         //Debug.Log(distance);
+    }
+
+    IEnumerator Shooting() {
+        canShoot = false;
+        animator.SetBool("isShooting", true);
+        yield return new WaitForSeconds(0.1f);
+        animator.SetBool("isShooting", false);
+        Shoot();
     }
 
     IEnumerator ShootRate() {

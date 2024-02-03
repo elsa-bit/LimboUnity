@@ -78,6 +78,7 @@
     <Compile Include="Assets/Src/Environment/JumpFlower.cs" />
     <Compile Include="Assets/Src/Actions/IceCreamProjectile.cs" />
     <Compile Include="Assets/Src/Actions/PlayerMove.cs" />
+    <Compile Include="Assets/Src/Actions/FallMonsterScript.cs" />
     <Compile Include="Assets/Src/Controllers/GravityController.cs" />
     <Compile Include="Assets/Src/Environment/MoveObject.cs" />
     <Compile Include="Assets/Src/Actions/GameManagement.cs" />
