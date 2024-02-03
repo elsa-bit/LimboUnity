@@ -17,7 +17,7 @@ public class DecorReverseController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            _decorReverser.ReverseDecor(other.GameObject());
+            _decorReverser.ReverseDecor(other.GameObject().GetComponent<PlayerMove>());
         }
     }
 }

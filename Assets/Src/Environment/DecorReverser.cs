@@ -8,10 +8,10 @@ public class DecorReverser : MonoBehaviour
     private Quaternion _targetRotation, _playerRotation;
     private bool _isRotating = false;
     
-    public void ReverseDecor(GameObject player)
+    public void ReverseDecor(PlayerMove player)
     {
         _targetRotation = Quaternion.Euler(0, 0, (_isReverse) ? 0 : -90);
-        _playerRotation = Quaternion.Euler(0, 0, -180); // 0 if gravity normal
+        _playerRotation = Quaternion.Euler(0, 0, (player.IsGravityNormal) ? 0 : 180);
         _isReverse = !_isReverse;
         if (!_isRotating)
         {
@@ -19,7 +19,7 @@ public class DecorReverser : MonoBehaviour
         }
     }
 
-    private IEnumerator RotateOverTime(float duration, GameObject player)
+    private IEnumerator RotateOverTime(float duration, PlayerMove player)
     {
         _isRotating = true;
         Quaternion startRotation = transform.rotation;
