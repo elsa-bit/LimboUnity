@@ -5579,6 +5579,8 @@ MonoBehaviour:
   gameOver: {fileID: 2090880708}
   player: {fileID: 816069614}
   son: {fileID: 486595436}
+  SonOn: {fileID: 21300000, guid: 4487209fdda91154da619301adb9e6c4, type: 3}
+  SonOff: {fileID: 21300000, guid: 11e3d102a51b3e1409ff67d202690d8b, type: 3}
 --- !u!4 &1103614620
 Transform:
   m_ObjectHideFlags: 0
