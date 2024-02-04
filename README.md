@@ -34,4 +34,4 @@ Le jeu se base sur un joueur appelé Saly qui cherche un ilot de fleur de lotus 
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Level1-InGame](https://github.com/elsa-bit/LimboUnity/assets/72619858/47950528-ae68-427c-8615-e09916d48b51)
