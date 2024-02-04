@@ -6803,11 +6803,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3968281498723126865, guid: 24ef3faa458dc4e4aa937517cff6daff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.3
+      value: 31.74
       objectReference: {fileID: 0}
     - target: {fileID: 3968281498723126865, guid: 24ef3faa458dc4e4aa937517cff6daff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.8
+      value: -9.1
       objectReference: {fileID: 0}
     - target: {fileID: 3968281498723126865, guid: 24ef3faa458dc4e4aa937517cff6daff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10513,11 +10513,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2894312417432524023, guid: d12e4fae3c81e2645bc6ba560589eca8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.2
+      value: 27.32
       objectReference: {fileID: 0}
     - target: {fileID: 2894312417432524023, guid: d12e4fae3c81e2645bc6ba560589eca8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.9
+      value: -13.4
       objectReference: {fileID: 0}
     - target: {fileID: 2894312417432524023, guid: d12e4fae3c81e2645bc6ba560589eca8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13018,11 +13018,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: -0.57
+  far clip plane: 1000.26
   field of view: 60
   orthographic: 1
-  orthographic size: 12.38
+  orthographic size: 18
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -33025,15 +33025,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2630434140363237338, guid: 1d0595ca82de7614bb7d5b9986027422, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.92
+      value: -28.2
       objectReference: {fileID: 0}
     - target: {fileID: 2630434140363237338, guid: 1d0595ca82de7614bb7d5b9986027422, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.09
+      value: -9.81
       objectReference: {fileID: 0}
     - target: {fileID: 2630434140363237338, guid: 1d0595ca82de7614bb7d5b9986027422, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 10.5
       objectReference: {fileID: 0}
     - target: {fileID: 2630434140363237338, guid: 1d0595ca82de7614bb7d5b9986027422, type: 3}
       propertyPath: m_LocalRotation.w
