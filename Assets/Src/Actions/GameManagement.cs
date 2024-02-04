@@ -94,7 +94,6 @@ public class GameManagement : MonoBehaviour
 
     public void restart()
     {
-        Debug.Log("restart");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
