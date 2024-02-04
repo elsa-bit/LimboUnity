@@ -105,26 +105,15 @@ public class PlayerMove : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Orbe")) {
-            IsCollidingWithOrbe = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other) {
-        if (other.gameObject.CompareTag("Orbe")) {
-            IsCollidingWithOrbe = false;
+        if (gameManagement.IsOrbeType(collision.gameObject)) {
+            //IsCollidingWithOrbe = true;
+            gameManagement.UpdateSelectedOrbe(collision.gameObject.tag);
+            //UpdateOrbe(collision.gameObject);
         }
     }
 
     public void Shoot() {
         GameObject shot = gameManagement.currentOrbe;
-
-        if (IsCollidingWithOrbe) {
-            GameObject orbe = GameObject.FindGameObjectWithTag("Orbe");
-
-            //UpdateOrbe(orbe);
-        }
-
         if(canShoot && shot != null) {
             canShoot = false;
             StartCoroutine(ShootRate());

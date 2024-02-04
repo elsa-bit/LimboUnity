@@ -4962,6 +4962,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1229933860449528486, guid: 061ef981f1ab34a31b5319f535a8b88b, type: 3}
+      propertyPath: lifeTime
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229933860449528486, guid: 061ef981f1ab34a31b5319f535a8b88b, type: 3}
+      propertyPath: isArtefact
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3049283286745910508, guid: 061ef981f1ab34a31b5319f535a8b88b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 93.40696
@@ -8587,7 +8595,9 @@ MonoBehaviour:
   - {fileID: 934238650}
   - {fileID: 915281015}
   - {fileID: 887382864}
-  currentOrbe: {fileID: 5557291413307903804, guid: 061ef981f1ab34a31b5319f535a8b88b, type: 3}
+  orbes:
+  - {fileID: 5557291413307903804, guid: 061ef981f1ab34a31b5319f535a8b88b, type: 3}
+  currentOrbe: {fileID: 0}
   gameOver: {fileID: 692333560}
   player: {fileID: 276526765}
   son: {fileID: 1929335267}
