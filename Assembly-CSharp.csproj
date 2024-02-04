@@ -45,7 +45,10 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.11f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets/Src/Global/GameManager.cs" />
+     <Compile Include="Assets/Src/Global/GameSound.cs" />
      <Compile Include="Assets/Src/Environment/MonsterDonjon.cs" />
+     <Compile Include="Assets/Src/Global/PlayerLife.cs" />
      <Compile Include="Assets/Src/Actions/IceCreamMonsterScript.cs" />
      <Compile Include="Assets/Src/Environment/Ladder.cs" />
      <Compile Include="Assets/Src/Controllers/DecorReverseController.cs" />
@@ -54,6 +57,7 @@
      <Compile Include="Assets/Src/Environment/PlantTrap.cs" />
      <Compile Include="Assets/Src/Actions/CameraFollow.cs" />
      <Compile Include="Assets/Src/Actions/HeartSaveLife.cs" />
+     <Compile Include="Assets/Src/Global/GameLevel.cs" />
      <Compile Include="Assets/Src/Environment/DecorReverser.cs" />
      <Compile Include="Assets/Test.cs" />
      <Compile Include="Assets/Src/Controllers/AttackController.cs" />
@@ -115,6 +119,7 @@
      <Folder Include="Assets/Adaptive Performance/Settings" />
      <Folder Include="Assets/Player/Animation" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
+     <Folder Include="Assets/Src/Global" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
      <Folder Include="Assets/Decorations" />
      <Folder Include="Assets/Plateforms/level-3/Prefab" />
