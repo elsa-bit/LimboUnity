@@ -44,7 +44,7 @@ public class JoystickController : MonoBehaviour
     
     private void _adapterForTest()
     {
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.A))
         {
             _playerMove.ToLeft();
         }
@@ -52,7 +52,7 @@ public class JoystickController : MonoBehaviour
         {
             _playerMove.ToRight();
         }
-        else if (Input.GetKey(KeyCode.Z))
+        else if (Input.GetKey(KeyCode.W))
         {
             _playerMove.ToUp();
         }

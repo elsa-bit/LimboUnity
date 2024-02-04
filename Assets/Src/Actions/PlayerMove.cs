@@ -7,14 +7,14 @@ public class PlayerMove : MonoBehaviour
     public GameManagement gameManagement;
     private Vector3 _initialPosition;
     private bool _isGravityNormal = true;
+    public bool IsGravityNormal
+    {
+        get => _isGravityNormal;
+    }
 
     void Start()
     {
         _initialPosition = transform.position;
-    }
-
-    void Update()
-    {
     }
 
     public void ToLeft()
