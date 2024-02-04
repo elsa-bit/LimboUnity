@@ -20050,11 +20050,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2837533234438042931, guid: e61c3468dd04040428837acc982342cf, type: 3}
       propertyPath: targetLevel
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2837533234438042931, guid: e61c3468dd04040428837acc982342cf, type: 3}
       propertyPath: currentLevel
-      value: -1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2837533234438042931, guid: e61c3468dd04040428837acc982342cf, type: 3}
       propertyPath: gameManagement

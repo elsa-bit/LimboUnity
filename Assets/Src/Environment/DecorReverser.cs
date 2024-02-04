@@ -13,10 +13,12 @@ public class DecorReverser : MonoBehaviour
         _targetRotation = Quaternion.Euler(0, 0, (_isReverse) ? 0 : -90);
         _playerRotation = Quaternion.Euler(0, 0, (player.IsGravityNormal) ? 0 : 180);
         _isReverse = !_isReverse;
-        if (!_isRotating)
+        /*if (!_isRotating)
         {
             StartCoroutine(RotateOverTime(4, player));
-        }
+        }*/
+        transform.rotation = _targetRotation;
+        player.transform.rotation  = _playerRotation;
     }
 
     private IEnumerator RotateOverTime(float duration, PlayerMove player)
