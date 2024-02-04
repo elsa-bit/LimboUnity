@@ -57,10 +57,13 @@
     <Compile Include="Assets/Test.cs" />
     <Compile Include="Assets/Src/Controllers/AttackController.cs" />
     <Compile Include="Assets/Src/Controllers/JumpController.cs" />
+    <Compile Include="Assets/Src/Environment/Detector.cs" />
     <Compile Include="Assets/Src/Actions/HeartContainer.cs" />
     <Compile Include="Assets/Src/Environment/JumpFlower.cs" />
     <Compile Include="Assets/Src/Actions/IceCreamProjectile.cs" />
     <Compile Include="Assets/Src/Actions/PlayerMove.cs" />
+    <Compile Include="Assets/Src/Actions/FallMonsterScript.cs" />
+    <Compile Include="Assets/Src/Controllers/GravityController.cs" />
     <Compile Include="Assets/Src/Controllers/GravityController.cs" />
     <Compile Include="Assets/Src/Environment/MoveObject.cs" />
     <Compile Include="Assets/Src/Effects/CameraEffect.cs" />
