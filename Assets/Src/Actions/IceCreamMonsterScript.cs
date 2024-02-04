@@ -39,9 +39,7 @@ public class IceCreamMonsterScript : MonoBehaviour
         StartCoroutine(ShootRate());
         GameObject cream = Instantiate(iceCream, iceCreamSpawn.position, Quaternion.identity);
         Vector2 distance = detector.GetDistance();
-        if (transform.localScale.x < 0) {
-            distance *= -1;
-        }
+        distance *= -1;
         distance.y *= 2f;
         if(distance.y < 0) {
             distance.y = 0f;
