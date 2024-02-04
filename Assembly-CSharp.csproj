@@ -59,6 +59,7 @@
     <UnityVersion>2022.3.11f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="/Users/etiennepaita/.vscode/extensions/visualstudiotoolsforunity.vstuc-0.9.4/Analyzers/Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.11f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll" />
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.11f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -77,6 +78,7 @@
     <Compile Include="Assets/Src/Controllers/JumpController.cs" />
     <Compile Include="Assets/Src/Environment/Detector.cs" />
     <Compile Include="Assets/Src/Actions/HeartContainer.cs" />
+    <Compile Include="Assets/Src/Actions/UnstableFire.cs" />
     <Compile Include="Assets/Src/Environment/JumpFlower.cs" />
     <Compile Include="Assets/Src/Actions/IceCreamProjectile.cs" />
     <Compile Include="Assets/Src/Actions/PlayerMove.cs" />

@@ -9,6 +9,7 @@ public class GameManagement : MonoBehaviour
     public int maxLife = 3;
     public float lifePoint = 3f;
     public GameObject[] HeartContainer;
+    public GameObject currentOrbe = null;
     public GameObject gameOver;
     public GameObject player;
     public Button son;
