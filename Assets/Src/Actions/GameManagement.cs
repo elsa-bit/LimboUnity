@@ -79,6 +79,12 @@ public class GameManagement : MonoBehaviour
         }
     }
 
+    public void GainLife(float lifeAmount)
+    {
+        lifePoint += lifeAmount;
+        UpdateLife();
+    }
+
     public void GameOver()
     {
         gameOver.SetActive(true);

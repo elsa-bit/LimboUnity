@@ -7,6 +7,9 @@ TagManager:
   - platform
   - Ladder
   - Trap
+  - Wall
+  - Rock
+  - Box
   layers:
   - Default
   - TransparentFX
