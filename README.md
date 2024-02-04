@@ -22,6 +22,8 @@ Le jeu se base sur un joueur appelé Saly qui cherche un ilot de fleur de lotus 
 
 ## Optimisations
 
+Les difficultés rencontrées sont les animations qui sont complexes à élaborer et les niveaux en eux-mêmes, où il faut être très créatif et cela prend beaucoup de temps.
+Nous n'avons pas eu le temps de partager tous les éléments dans le Singleton et nous aurions voulu créer plus de monstres.
 
 
 
