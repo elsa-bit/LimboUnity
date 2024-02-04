@@ -4,6 +4,7 @@ namespace Src
     {
         One = 1,
         Two = 2,
-        Three = 3
+        Three = 3,
+        End = -1
     }
 }

@@ -8,7 +8,7 @@ namespace Src
 {
     public class GameManager
     {
-        private static GameManager _instance;
+        private static GameManager _instance = new GameManager();
         private Dictionary<GameLevel, Stopwatch> _levelTimers;
         
         private GameManager()
@@ -27,9 +27,6 @@ namespace Src
         }
         
         public static GameManager Instance => _instance;
-        
-        
-        public static void Start() => _instance ??= new GameManager();
 
         public void StartLevelTimer(GameLevel level) => _levelTimers[level].Start();
 
