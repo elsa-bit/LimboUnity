@@ -14,16 +14,21 @@ public class GameManagement : MonoBehaviour
     public Button son;
     public Sprite SonOn;
     public Sprite SonOff;
-    private float _initialLifePoint;
     private bool muted;
 
     void Start()
     {
         gameOver.SetActive(false);
+
+        var _savedLife = PlayerPrefs.GetFloat("SavedLifePoint");
+        if (_savedLife != 0f)
+        {
+            lifePoint = PlayerPrefs.GetFloat("SavedLifePoint");
+            PlayerPrefs.SetFloat("SavedLifePoint", 0f);
+        }
+
         UpdateHeartContainer();
         UpdateLife();
-
-        _initialLifePoint = lifePoint;
     }
 
     public void UpdateHeartContainer()
@@ -89,7 +94,7 @@ public class GameManagement : MonoBehaviour
     {
         gameOver.SetActive(true);
         player.SetActive(false);
-        lifePoint = _initialLifePoint;
+        lifePoint = (float)maxLife;
     }
 
     public void restart()
@@ -102,12 +107,16 @@ public class GameManagement : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void Mute() {
+    public void Mute()
+    {
         muted = !muted;
-        if(muted) {
+        if (muted)
+        {
             AudioListener.volume = 0;
             son.image.sprite = SonOff;
-        }else{
+        }
+        else
+        {
             AudioListener.volume = 1;
             son.image.sprite = SonOn;
         }
