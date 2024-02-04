@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946613a033bd3334da3dd73af0c96a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3678371390285541127, guid: 12e2b06495dd5034185801e6acc3fa56, type: 3}
+  player: {fileID: 5042139414482876100, guid: 0a423bd24a43a614db586b145803eb48, type: 3}
   padController: {fileID: 1919850656642103286}
 --- !u!1 &1919850656642103286
 GameObject:
