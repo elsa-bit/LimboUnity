@@ -71,6 +71,7 @@
     <Compile Include="Assets/Src/Environment/Monster.cs" />
     <Compile Include="Assets/Src/Environment/PlantTrap.cs" />
     <Compile Include="Assets/Src/Actions/CameraFollow.cs" />
+    <Compile Include="Assets/Src/Actions/HeartSaveLife.cs" />
     <Compile Include="Assets/Src/Environment/DecorReverser.cs" />
     <Compile Include="Assets/Test.cs" />
     <Compile Include="Assets/Src/Controllers/AttackController.cs" />

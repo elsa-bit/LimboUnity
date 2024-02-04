@@ -92,4 +92,8 @@ public class PlayerMove : MonoBehaviour
         animator.SetFloat("Vertical", 0f);
         animator.SetFloat("Speed", 0f);
     }
+
+    public void GainLife(float lifeAmount){
+        gameManagement.GainLife(lifeAmount);
+    }
 }
