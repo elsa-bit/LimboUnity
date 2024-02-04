@@ -8,7 +8,10 @@ public class GameManagement : MonoBehaviour
 {
     public int maxLife = 3;
     public float lifePoint = 3f;
+    public GameObject orbeIndicator;
     public GameObject[] HeartContainer;
+    public GameObject[] orbes;
+    public GameObject currentOrbe = null;
     public GameObject gameOver;
     public GameObject player;
     public Button son;
@@ -120,5 +123,27 @@ public class GameManagement : MonoBehaviour
             AudioListener.volume = 1;
             son.image.sprite = SonOn;
         }
+    }
+
+    public bool IsOrbeType(GameObject o) {
+        foreach (var orbe in orbes)
+        {
+            if (orbe.CompareTag(o.tag)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void UpdateSelectedOrbe(string tag) {
+        foreach (var orbe in orbes)
+        {
+            if (orbe.CompareTag(tag)) {
+                currentOrbe = orbe;
+                orbeIndicator.SetActive(true);
+                return;
+            }
+        }
+        orbeIndicator.SetActive(false);
     }
 }

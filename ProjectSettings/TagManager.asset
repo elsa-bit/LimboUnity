@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Rock
   - Box
+  - Orbe
   layers:
   - Default
   - TransparentFX

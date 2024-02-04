@@ -1,11 +1,20 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
     public float speed = 9.0f;
     public Animator animator;
+    public float shotSpeed = 0.4f;
+    public float projectileSpeed = 10f;
+    public Transform rightSpawn;
+    public Transform leftSpawn;
     public GameManagement gameManagement;
+    private bool IsCollidingWithOrbe = false;
     private Vector3 _initialPosition;
+    private bool canShoot = true;
+    private bool isFacingRight = true;
     private bool _isGravityNormal = true;
     public bool IsGravityNormal
     {
@@ -19,6 +28,7 @@ public class PlayerMove : MonoBehaviour
 
     public void ToLeft()
     {
+        isFacingRight = false;
         Vector3 position = transform.position;
         position.x -= speed * Time.deltaTime;
         if (!_isGravityNormal)
@@ -36,6 +46,7 @@ public class PlayerMove : MonoBehaviour
 
     public void ToRight()
     {
+        isFacingRight = true;
         Vector3 position = transform.position;
         position.x += speed * Time.deltaTime;
         if (_isGravityNormal)
@@ -95,5 +106,48 @@ public class PlayerMove : MonoBehaviour
 
     public void GainLife(float lifeAmount){
         gameManagement.GainLife(lifeAmount);
+    }
+    
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (gameManagement.IsOrbeType(collision.gameObject)) {
+            //IsCollidingWithOrbe = true;
+            gameManagement.UpdateSelectedOrbe(collision.gameObject.tag);
+            //UpdateOrbe(collision.gameObject);
+        }
+    }
+
+    public void Shoot() {
+        GameObject shot = gameManagement.currentOrbe;
+        if(canShoot && shot != null) {
+            canShoot = false;
+            StartCoroutine(ShootRate());
+            int shotDirection = 1;
+            Transform selectedSpawn = rightSpawn;
+            if (!isFacingRight) {
+                shotDirection = -1;
+                selectedSpawn = leftSpawn;
+            }
+            GameObject o = Instantiate(shot, selectedSpawn.position, Quaternion.identity);
+            
+            //Debug.Log(transform.localScale.x);
+            o.GetComponent<Rigidbody2D>().velocity = new Vector2(shotDirection, 0) * projectileSpeed;
+            //Debug.Log(distance);
+        }
+    }
+
+    private void UpdateOrbe(GameObject orbe) {
+        GameObject previousOrbe = gameManagement.currentOrbe;
+        gameManagement.currentOrbe = Instantiate(Resources.Load(orbe.name)) as GameObject;
+        Vector2 pos = orbe.transform.position;
+        if (previousOrbe != null) {
+            // Replace taken orbe by previous one
+            Instantiate(previousOrbe, pos, Quaternion.identity);
+        }
+        Destroy(orbe);
+    }
+
+    IEnumerator ShootRate() {
+        yield return new WaitForSeconds(shotSpeed);
+        canShoot = true;
     }
 }
