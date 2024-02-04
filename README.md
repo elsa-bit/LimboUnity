@@ -2,6 +2,7 @@
 
 Limgi est un projet Unity pour mobile basé sur le jeu vidéo Limbo.
 
+![Limbo](https://github.com/elsa-bit/LimboUnity/assets/72619858/59e37f8b-45ee-4417-8daa-c43e24d7cd05)
 
 ## Documentation
 
@@ -51,3 +52,6 @@ Nous n'avons pas eu le temps de partager tous les éléments dans le Singleton e
 **Level 3**
 ![Level3-InGame](https://github.com/elsa-bit/LimboUnity/assets/72619858/2c8ac598-4d64-4a8e-b920-7c480222fcad)
 ![Level3](https://github.com/elsa-bit/LimboUnity/assets/72619858/571122d4-6c41-4ef2-8e83-9aa44a33dea7)
+
+**Score**
+![Score](https://github.com/elsa-bit/LimboUnity/assets/72619858/422c86ac-21d8-484f-9909-6313d47623a2)
